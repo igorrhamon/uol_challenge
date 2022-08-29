@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  mysql:
+    container_name: mysql_container
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-jogadores}
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_USER: ${MYSQL_USER:-quarkus}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-123456}
+#      Allow external access to the MySQL server
+      MYSQL_EXTRA_OPTS: '--bind-address=%'
+
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql
+    restart: unless-stopped
+
+networks:
+  mysql:
+    driver: bridge
+
+volumes:
+  mysql:
