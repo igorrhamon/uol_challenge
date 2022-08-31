@@ -1,6 +1,7 @@
-package br.com.uol.init.liga;
+package br.com.uol.init.herois.liga;
 
 import br.com.uol.dto.init.xml.LigadaJusticaRequestDTO;
+import br.com.uol.enums.Equipe;
 import br.com.uol.model.Heroi;
 import br.com.uol.service.HeroiService;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -52,6 +53,7 @@ public class ImportarLigaXML implements ImportLiga {
                     codinome -> {
                         Heroi heroi = new Heroi ();
                         heroi.setNome (codinome.getCodinome ());
+                        heroi.setEquipe (Equipe.LIGA_DA_JUSTICA);
                         return heroi;
                     }
             ).collect (Collectors.toList ());

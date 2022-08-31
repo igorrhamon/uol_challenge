@@ -1,4 +1,4 @@
-package br.com.uol.init.liga;
+package br.com.uol.init.herois.liga;
 
 public interface ImportLiga {
 

@@ -1,7 +1,8 @@
-package br.com.uol.init.vingadores;
+package br.com.uol.init.herois.vingadores;
 
 
 import br.com.uol.dto.init.json.VingadoresRestDTO;
+import br.com.uol.enums.Equipe;
 import br.com.uol.model.Heroi;
 import br.com.uol.service.HeroiService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,6 +50,7 @@ public class ImportarVingadoresJson implements ImportVingadores{
             List<Heroi> herois = vingadoresRestDTO.getVingadores ().stream ().map (v -> {
                 Heroi heroi = new Heroi ();
                 heroi.setNome (v.getCodinome ());
+                heroi.setEquipe (Equipe.VINGADORES);
                 return heroi;
             }).collect (java.util.stream.Collectors.toList ());
             heroiService.salvarTodos (herois);

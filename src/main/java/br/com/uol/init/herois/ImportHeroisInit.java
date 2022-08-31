@@ -1,7 +1,7 @@
-package br.com.uol.init;
+package br.com.uol.init.herois;
 
-import br.com.uol.init.liga.ImportLiga;
-import br.com.uol.init.vingadores.ImportVingadores;
+import br.com.uol.init.herois.liga.ImportLiga;
+import br.com.uol.init.herois.vingadores.ImportVingadores;
 import br.com.uol.service.HeroiService;
 import lombok.extern.slf4j.Slf4j;
 

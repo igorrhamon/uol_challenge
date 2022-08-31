@@ -1,4 +1,4 @@
-package br.com.uol.init.vingadores;
+package br.com.uol.init.herois.vingadores;
 
 public interface ImportVingadores {
 

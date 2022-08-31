@@ -1,6 +1,6 @@
 package br.com.uol;
 
-import br.com.uol.init.ImportHeroisInit;
+import br.com.uol.init.herois.ImportHeroisInit;
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.QuarkusApplication;
 
