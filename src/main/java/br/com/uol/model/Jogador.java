@@ -24,4 +24,15 @@ public class Jogador extends PanacheEntity {
     @Column(name = "telefone", length = 11)
     private String telefone;
 
+    @OneToOne(cascade = CascadeType.MERGE, optional = false, orphanRemoval = true)
+    @JoinColumn(name = "heroi_id", nullable = false, unique = true)
+    private Heroi heroi;
+
+    @Override
+    public String toString() {
+        return getClass ().getSimpleName () + "(" +
+                "id = " + id + ", " +
+                "nome = " + nome + ", " +
+                "heroi = " + heroi + ")";
+    }
 }
